@@ -46,7 +46,7 @@ public class FileBoxRest {
     public Response getFileData(@PathParam("filename") String filename) {
         logger.info("Вызван метод getFileData с параметром " + filename);
         File file = new File(prop.getProperty("DIR"), filename);
-        if (file.exists() & file.isFile()) {
+        if (file.exists() && file.isFile()) {
             logger.info("Файл найден, передаём его клиенту");
             return Response.ok()
                     .type(MediaType.APPLICATION_OCTET_STREAM)

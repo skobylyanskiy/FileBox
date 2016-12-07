@@ -10,9 +10,9 @@ public class FileList {
     public FileList() {}
 
     public FileList(String s) {
-        fileList = new ArrayList();
+        fileList = new ArrayList<>();
         File directory = new File(s);
-        if(directory.exists() & directory.isDirectory()) {
+        if(directory.exists() && directory.isDirectory()) {
             for (File e : directory.listFiles()) {
                 if (e.isFile()) {
                     fileList.add(e.getName());
