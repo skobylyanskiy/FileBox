@@ -19,10 +19,8 @@ public class FileBoxRest {
 
     public FileBoxRest() {
         logger.info("Пытаемcя загрузить файл с настройками");
-        try {
-            InputStream in = getClass().getResourceAsStream("/prop.properties");
+        try (InputStream in = getClass().getResourceAsStream("/prop.properties")){
             prop.load(in);
-            in.close();
             logger.info("Файл с настройками загружен");
             logger.info("Папка для отображения: " + prop.getProperty("DIR"));
         } catch (IOException | NullPointerException e) {
